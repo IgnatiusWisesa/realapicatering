@@ -108,7 +108,7 @@ module.exports = {
     },
     getusers_userid: (req, res) => {
 
-        let sql = `select * from users where id='${req.body.id}';`
+        let sql = `select * from users where id='${req.params.id}';`
 
         db.query(sql, (err, result) => {
             if(err) res.status(500).send(err)

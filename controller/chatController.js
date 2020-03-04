@@ -39,7 +39,7 @@ module.exports = {
         let sql = `INSERT INTO chat SET ?`
         db.query(sql, pushmsg, (err, result) => {
             if(err) res.status(500).send(err)
-            req.app.io.emit('chat message', req.app.arrMsg)
+            req.app.io.emit('chat message', pushmsg)
             res.status(200).send({ message: 'Send Message Success' })
         })
     },

@@ -6,7 +6,10 @@ module.exports = {
 
     getmerchants_active: (req, res) => {
 
-        let sql = `SELECT * FROM merchants where status='active';`
+        let sql = `SELECT m.*, r.rating FROM merchants m
+        left join ratings r
+        on m.id = r.idmerchants
+        where status = 'active';`
 
         db.query(sql, (err, result) => {
             if(err) res.status(500).send(err)
@@ -15,7 +18,10 @@ module.exports = {
     },
     getmerchants_reviewed: (req, res) => {
 
-        let sql = `SELECT * FROM merchants where status='review';`
+        let sql = `SELECT m.*, r.rating FROM merchants m
+        left join ratings r
+        on m.id = r.idmerchants
+        where status = 'review';`
 
         db.query(sql, (err, result) => {
             if(err) res.status(500).send(err)
@@ -24,7 +30,10 @@ module.exports = {
     },
     getmerchants_deleted: (req, res) => {
 
-        let sql = `SELECT * FROM merchants where status='deleted';`
+        let sql = `SELECT m.*, r.rating FROM merchants m
+        left join ratings r
+        on m.id = r.idmerchants
+        where status = 'deleted';`
 
         db.query(sql, (err, result) => {
             if(err) res.status(500).send(err)
@@ -34,6 +43,18 @@ module.exports = {
     getmerchants_name: (req, res) => {
 
         let sql = `SELECT * FROM merchants where name='${req.body.merchantname}';`
+
+        db.query(sql, (err, result) => {
+            if(err) res.status(500).send(err)
+            res.status(200).send(result)
+        })
+    },
+    getmerchants_id: (req, res) => {
+
+        let sql = `SELECT m.*, r.rating FROM merchants m 
+        left join ratings r
+        on m.id = r.idmerchants
+        where id=${req.params.id};`
 
         db.query(sql, (err, result) => {
             if(err) res.status(500).send(err)

@@ -4,6 +4,8 @@ const playlistsRouter = require('./playlistsRouter')
 const menusRouter = require('./menusRouter')
 const custmenusRouter = require('./custmenusRouter')
 const chatRouter = require('./chatRouter')
+const commentsRouter = require('./commentsRouter')
+const ordersRouter = require('./ordersRouter')
 
 module.exports = { 
     userRouter,
@@ -11,5 +13,7 @@ module.exports = {
     playlistsRouter,
     menusRouter,
     custmenusRouter,
-    chatRouter
+    chatRouter,
+    commentsRouter,
+    ordersRouter
 }
