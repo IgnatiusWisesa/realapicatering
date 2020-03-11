@@ -6,6 +6,8 @@ const custmenusController = require('./custmenusController')
 const chatController = require('./chatController')
 const commentsController = require('./commentsController')
 const ordersController = require('./ordersController')
+const transController = require('./transController')
+const ratingController = require('./ratingController')
 
 module.exports = { 
     userController,
@@ -15,5 +17,7 @@ module.exports = {
     custmenusController,
     chatController,
     commentsController,
-    ordersController
+    ordersController,
+    transController,
+    ratingController
 }

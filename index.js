@@ -17,7 +17,7 @@ app.get('/',((req,res)=>{
     return res.status(200).send(`<h1>Ini Home Page</h1>`)
 }))
 
-const { userRouter, merchantsRouter, playlistsRouter,menusRouter, custmenusRouter, chatRouter, commentsRouter, ordersRouter } = require('./router')
+const { userRouter, merchantsRouter, playlistsRouter,menusRouter, custmenusRouter, chatRouter, commentsRouter, ordersRouter, transRouter, ratingRouter } = require('./router')
 
 // router users
 app.use('/users', userRouter)
@@ -42,6 +42,12 @@ app.use('/comments', commentsRouter)
 
 //router orders
 app.use('/orders', ordersRouter)
+
+//router transaksi
+app.use('/trans', transRouter)
+
+//router rating
+app.use('/rating', ratingRouter)
 
 app.listen(PORT, ()=>console.log(`Listening on Port - ` + PORT))
 

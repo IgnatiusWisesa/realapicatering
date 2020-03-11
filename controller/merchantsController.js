@@ -42,7 +42,7 @@ module.exports = {
     },
     getmerchants_name: (req, res) => {
 
-        let sql = `SELECT * FROM merchants where name='${req.body.merchantname}';`
+        let sql = `SELECT * FROM merchants where name="${req.body.merchantname}";`
 
         db.query(sql, (err, result) => {
             if(err) res.status(500).send(err)

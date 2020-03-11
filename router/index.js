@@ -6,6 +6,8 @@ const custmenusRouter = require('./custmenusRouter')
 const chatRouter = require('./chatRouter')
 const commentsRouter = require('./commentsRouter')
 const ordersRouter = require('./ordersRouter')
+const transRouter = require('./transRouter')
+const ratingRouter = require('./ratingRouter')
 
 module.exports = { 
     userRouter,
@@ -15,5 +17,7 @@ module.exports = {
     custmenusRouter,
     chatRouter,
     commentsRouter,
-    ordersRouter
+    ordersRouter,
+    transRouter,
+    ratingRouter
 }
